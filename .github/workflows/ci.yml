@@ -1,0 +1,37 @@
+name: Java CI with Maven / Gradle
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repositorio
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # 2. Configurar el entorno de Java (JDK 17)
+      - name: Configurar Java JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Compilar el código Java simple
+      - name: Compilar archivos Java
+        run: |
+          mkdir -p bin
+          javac -d bin $(find . -name "*.java")
+
+      # 4. Ejecutar la clase principal para verificar funcionamiento
+      - name: Ejecutar aplicación
+        run: java -cp bin Main
