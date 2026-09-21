@@ -7,7 +7,7 @@ public class Paquete {
     public Paquete(String id, String destino, String numeroTracking) {
         this.id = id;
         this.destino = destino;
-        this.numeroTracking = numeroTracking;
+        this.numeroTracking = numeroTracking; //numero de seguimiento del paquete
         this.estado = "DESPACHADO";
     }
 
