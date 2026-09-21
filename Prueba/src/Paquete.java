@@ -1,9 +1,11 @@
 public class Paquete {
     private String id;
-    private String estado; // "DESPACHADO" (WMS) -> "EN_TRANSITO" -> "ENTREGADO" (TMS)
+    private String estado;
+    private String destino; // <--- Modificación chica
 
-    public Paquete(String id) {
+    public Paquete(String id, String destino) {
         this.id = id;
+        this.destino = destino;
         this.estado = "DESPACHADO";
     }
 
@@ -12,6 +14,6 @@ public class Paquete {
     }
 
     public String getInfo() {
-        return "Paquete " + id + " - Estado: " + estado;
+        return "Paquete " + id + " a " + destino + " - Estado: " + estado;
     }
 }
