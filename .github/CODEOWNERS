@@ -1,0 +1,3 @@
+# Archivo: .github/CODEOWNERS
+# Asigna a todos los integrantes del equipo como revisores por defecto
+*       @sanchezzt @violetaferrero @AngelaStoppello @VictoriaSovrano
